@@ -7,18 +7,17 @@ us_only = false
 approve_requirement = 95
 number_hits_approved = 50
 require_master_workers = false
+ad_url_domain = vast-woodland-88257.herokuapp.com
 
 
 
 [Database Parameters] 
 database_url = sqlite:///participants2.db
 
-
-
 assignments_table_name = exp1_driftToMiddle_timeDelay5s_freezeWindow
 
 [Server Parameters]
-host = localhost
+host = 0.0.0.0
 port = 23658
 logfile = server.log
 loglevel = 1
@@ -28,7 +27,7 @@ loglevel = 1
 experiment_code_version = version1
 num_conds = 1
 num_counters = 1
-contact_email_on_error = chengshaozhe@gmail.com
+contact_email_on_error = 12239014@zju.edu.cn
 browser_exclude_rule = MSIE, mobile, tablet
 allow_repeats = false
 cutoff_time = 30
