@@ -18,12 +18,10 @@ var nTrials = trajData.length
 
 var introduction = {
   type: jsPsychImageKeyboardResponse,
-  stimulus: '../images/onlineExp1.png',
-  stimulus_height: 800,
-  stimulus_width: 1400,
-  // on_start: function() {
-  //   creadiv(0.5 * WINSETTING.w, 0.5 * WINSETTING.h, "experiment content")
-  // },
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+      <img src="static/images/onlineExp1.png" style = "width: 1400px; height: 800px"/>
+    `,
   choices: " ",
   // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
   data: {type: 'introduction'}
