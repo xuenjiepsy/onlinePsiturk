@@ -3,7 +3,7 @@ trajSelectNum = 1
 // trajSelectNum = Math.floor(Math.random() * 20) + 1;
 trajSelect = 'traj' + trajSelectNum + '.json'
 console.log(trajSelect)
-xmlhttp.open('GET', trajSelect, false);  // 第三个参数指定同步加载
+xmlhttp.open('GET', 'traj' + trajSelectNum + '.json', false);  // 第三个参数指定同步加载
 xmlhttp.send();
 const trajData = JSON.parse(xmlhttp.responseText);
 
