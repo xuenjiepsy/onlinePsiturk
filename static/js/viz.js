@@ -22,11 +22,12 @@ function drawTraj(c){
 
   context.fillStyle = COLORPOOL.line;
   context.lineWidth = COLORPOOL.lineWidth;
-  // let color = "#255";
-  let color1 = "blue";
-  let color2 = "red";
-  let color3 = "green";
-  let color4 = "yellow";
+  let colorSpace = ["blue", "red", "green", "yellow"]
+  colorSpace = shuffleList(colorSpace)
+  // let color1 = "blue";
+  // let color2 = "red";
+  // let color3 = "green";
+  // let color4 = "yellow";
   context.strokeRect(0  ,
       0 ,
       WINSETTING.w, WINSETTING.h );
@@ -57,13 +58,13 @@ let interval = setInterval(function() {
     allow_held_key: false
   });
     drawWhiteBackground(context)
-    drawCircle(context, color1, 1 / 6 * EXPSETTINGS.lineWidth,
+    drawCircle(context, colorSpace[0], 1 / 6 * EXPSETTINGS.lineWidth,
         trajData[trialIndex][trajFrame][sheepId][0], trajData[trialIndex][trajFrame][sheepId][1], 0, 2 * Math.PI)
-    drawCircle(context, color2, 1 / 6 * EXPSETTINGS.lineWidth,
+    drawCircle(context, colorSpace[1], 1 / 6 * EXPSETTINGS.lineWidth,
     trajData[trialIndex][trajFrame][wolfId][0], trajData[trialIndex][trajFrame][wolfId][1], 0, 2 * Math.PI)
-    drawCircle(context, color3, 1 / 6 * EXPSETTINGS.lineWidth,
+    drawCircle(context, colorSpace[2], 1 / 6 * EXPSETTINGS.lineWidth,
     trajData[trialIndex][trajFrame][masterId][0], trajData[trialIndex][trajFrame][masterId][1], 0, 2 * Math.PI)
-    drawCircle(context, color4, 1 / 6 * EXPSETTINGS.lineWidth,
+    drawCircle(context, colorSpace[3], 1 / 6 * EXPSETTINGS.lineWidth,
     trajData[trialIndex][trajFrame][distractorId][0], trajData[trialIndex][trajFrame][distractorId][1], 0, 2 * Math.PI)
     context.beginPath();
     drawLine(context, [trajData[trialIndex][trajFrame][wolfId],trajData[trialIndex][trajFrame][masterId]], EXPSETTINGS.lineWidthConnectBalls)
