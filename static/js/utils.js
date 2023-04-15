@@ -121,7 +121,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       var singleTrialData = {
                         trial: trialIndex,
                         agentIdSeleted: agentIdSeleted,
-                        condition: trajCondition[trialIndex]
+                        condition: trajConditionData[trialIndex]
                       };
                         console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
@@ -146,3 +146,18 @@ function shuffleList(list) {
               }
           return list;
         }
+
+function shuffleListForTraj(list) {
+  let shuffledList = [...list]; // 复制列表
+  let indexList = []; // 索引列表
+  for (let i = shuffledList.length - 1; i > 0; i--) {
+    // 从后往前遍历列表，随机交换当前元素和前面的某个元素
+    let j = Math.floor(Math.random() * (i + 1)); // 生成[0, i]之间的随机整数
+    [shuffledList[i], shuffledList[j]] = [shuffledList[j], shuffledList[i]]; // 交换元素
+  }
+  // 生成索引列表
+  for (let i = 0; i < list.length; i++) {
+    indexList.push(list.indexOf(shuffledList[i]));
+  }
+  return {'trajList': shuffledList, 'trajIndexList': indexList}; // 返回打乱后的列表和索引列表
+}
