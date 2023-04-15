@@ -4,7 +4,7 @@ var sheepId = 1
 var masterId = 2
 var distractorId = 3
 var agentNum = 4
-var nTrials = trajData.length
+
 
 var jsPsych = initJsPsych()
 var timeline = [];
@@ -12,6 +12,7 @@ var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
 trajForExp = shuffleListForTraj(traj)
 trajData = trajForExp['trajList']
 trajConditionData = trajForExp['trajIndexList']
+var nTrials = trajData.length
 var initialExp = {
   type: jsPsychCanvasKeyboardResponse,
   canvas_size: [WINSETTING.w, WINSETTING.h],
