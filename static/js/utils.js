@@ -43,6 +43,13 @@ function posConvert(x,y){
 
 function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText){
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0){
+    var singleTrialData = {
+      trial: trialIndex,
+      agentIdSeleted: agentIdSeleted,
+      condition: trajConditionData[trialIndex]
+    };
+      console.log(singleTrialData)
+      psiTurk.recordTrialData(singleTrialData)
     jsPsych.finishTrial() 
     return 'f'
   }
