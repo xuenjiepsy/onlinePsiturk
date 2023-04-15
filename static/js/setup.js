@@ -9,7 +9,7 @@ const trajData = JSON.parse(xmlhttp.responseText);
 
 let xmlhttpCondition = new XMLHttpRequest();
 trajConditionSelect = 'condition' + trajSelectNum + '.json'
-xmlhttpCondition.open('GET', trajConditionSelect, false);  // 第三个参数指定同步加载
+xmlhttpCondition.open('GET', 'condition.json', false);  // 第三个参数指定同步加载
 xmlhttpCondition.send();
 const trajCondition = JSON.parse(xmlhttpCondition.responseText);
 
