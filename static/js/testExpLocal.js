@@ -14,14 +14,14 @@ trajData = trajForExp['trajList']
 trajConditionData = trajForExp['trajIndexList']
 var nTrials = trajData.length
 
-var preload = {
-  type: jsPsychPreload,
-  auto_preload: true
-}
+// var preload = {
+//   type: jsPsychPreload,
+//   auto_preload: true
+// }
 
 var introduction = {
   type: jsPsychImageKeyboardResponse,
-  stimulus: 'onlineExp1',
+  stimulus: 'onlineExp1.png',
   // on_start: function() {
   //   creadiv(0.5 * WINSETTING.w, 0.5 * WINSETTING.h, "experiment content")
   // },
@@ -106,12 +106,12 @@ var expEndIntro = {
   //   elementContent.parentNode.removeChild(elementContent);
   // },
 }
-timeline.push(preload)
+// timeline.push(preload)
 timeline.push(introduction);
 timeline.push(experiments);
 timeline.push(expEndIntro)
-if (typeof jsPsych !== "undefined") {
-  jsPsych.run(generateDocsDemoTimeline(timeline));
-} else {
-  document.body.innerHTML = '<div style="text-align:center; margin-top:50%; transform:translate(0,-50%);">You must be online to view the plugin demo.</div>';}
-// jsPsych.run(timeline)
+// if (typeof jsPsych !== "undefined") {
+//   jsPsych.run(generateDocsDemoTimeline(timeline));
+// } else {
+//   document.body.innerHTML = '<div style="text-align:center; margin-top:50%; transform:translate(0,-50%);">You must be online to view the plugin demo.</div>';}
+jsPsych.run(timeline)
