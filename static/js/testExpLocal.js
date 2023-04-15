@@ -18,7 +18,7 @@ var nTrials = trajData.length
 
 var introduction = {
   type: jsPsychImageKeyboardResponse,
-  stimulus: 'onlineExp1.png',
+  stimulus: '../images/onlineExp1.png',
   stimulus_height: 800,
   stimulus_width: 1400,
   // on_start: function() {
