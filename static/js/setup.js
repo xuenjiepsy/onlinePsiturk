@@ -1,17 +1,17 @@
-let xmlhttp = new XMLHttpRequest();
-trajSelectNum = 1
-// trajSelectNum = Math.floor(Math.random() * 20) + 1;
-trajSelect = 'traj' + trajSelectNum + '.json'
-console.log(trajSelect)
-xmlhttp.open('GET', 'traj.json', false);  // 第三个参数指定同步加载
-xmlhttp.send();
-const trajData = JSON.parse(xmlhttp.responseText);
+// let xmlhttp = new XMLHttpRequest();
+// trajSelectNum = 1
+// // trajSelectNum = Math.floor(Math.random() * 20) + 1;
+// trajSelect = 'traj' + trajSelectNum + '.json'
+// console.log(trajSelect)
+// xmlhttp.open('GET', 'traj.json', false);  // 第三个参数指定同步加载
+// xmlhttp.send();
+// const trajData = JSON.parse(xmlhttp.responseText);
 
-let xmlhttpCondition = new XMLHttpRequest();
-trajConditionSelect = 'condition' + trajSelectNum + '.json'
-xmlhttpCondition.open('GET', 'condition.json', false);  // 第三个参数指定同步加载
-xmlhttpCondition.send();
-const trajCondition = JSON.parse(xmlhttpCondition.responseText);
+// let xmlhttpCondition = new XMLHttpRequest();
+// trajConditionSelect = 'condition' + trajSelectNum + '.json'
+// xmlhttpCondition.open('GET', 'condition.json', false);  // 第三个参数指定同步加载
+// xmlhttpCondition.send();
+// const trajCondition = JSON.parse(xmlhttpCondition.responseText);
 
 const EXPSETTINGS = {
 cellSize: 40,
