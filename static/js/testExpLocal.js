@@ -17,7 +17,6 @@ var nTrials = trajData.length
 
 
 var introduction = {
-  type: jsPsychImageKeyboardResponse,
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
       <img src="static/images/onlineExp1.png" style = "width: 1400px; height: 800px"/>
@@ -30,6 +29,34 @@ var introduction = {
   //   elementContent.parentNode.removeChild(elementContent);
   // },
 }
+
+var introductionVideo1 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+      <video src="static/demos/1.1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+    `,
+  choices: " ",
+  // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+  data: {type: 'introduction'}
+  // on_finish: function() {
+  //   var elementContent = document.getElementById("experiment content");
+  //   elementContent.parentNode.removeChild(elementContent);
+  // },
+}
+
+// var introductionVideo2 = {
+//   type: jsPsychHtmlKeyboardResponse,
+//   stimulus: `
+//       <img src="static/images/onlineExp1.png" style = "width: 1400px; height: 800px"/>
+//     `,
+//   choices: " ",
+//   // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+//   data: {type: 'introduction'}
+//   // on_finish: function() {
+//   //   var elementContent = document.getElementById("experiment content");
+//   //   elementContent.parentNode.removeChild(elementContent);
+//   // },
+// }
 
 var initialExp = {
   type: jsPsychCanvasKeyboardResponse,
@@ -105,6 +132,7 @@ var expEndIntro = {
 }
 // timeline.push(preload)
 timeline.push(introduction);
+timeline.push(introductionVideo1)
 timeline.push(experiments);
 timeline.push(expEndIntro)
 // if (typeof jsPsych !== "undefined") {
