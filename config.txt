@@ -13,7 +13,7 @@ ad_url_domain = arcane-inlet-44500.herokuapp.com
 
 [Database Parameters] 
 #database_url = sqlite:///participants2.db
-database_url = postgresql://qpplfsobcwavqz:0c1efbd1508a3038796ffe198bd59e54a6f42efb2661e9cba1bcd857b9954dcf@ec2-3-93-160-246.compute-1.amazonaws.com:5432/dam58604eejqqa
+database_url = postgresql://zizyzmgdlszuai:78b29b5c1a321c1d310a7f7e1916a7098afb7e69cfaf48da4d2ec88aa6d3d32d@ec2-52-205-45-222.compute-1.amazonaws.com:5432/d4f6aoto23qu4q
 
 assignments_table_name = exp1_driftToMiddle_timeDelay5s_freezeWindow
 
