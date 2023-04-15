@@ -14,6 +14,11 @@ trajData = trajForExp['trajList']
 trajConditionData = trajForExp['trajIndexList']
 var nTrials = trajData.length
 
+var preload = {
+  type: jsPsychPreload,
+  auto_preload: true
+}
+
 var introduction = {
   type: jsPsychImageKeyboardResponse,
   stimulus: 'onlineExp1',
@@ -101,7 +106,7 @@ var expEndIntro = {
   //   elementContent.parentNode.removeChild(elementContent);
   // },
 }
-
+timeline.push(preload)
 timeline.push(introduction);
 timeline.push(experiments);
 timeline.push(expEndIntro)
