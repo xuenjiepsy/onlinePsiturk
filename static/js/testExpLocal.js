@@ -130,7 +130,10 @@ var expEndIntro = {
   //   elementContent.parentNode.removeChild(elementContent);
   // },
 }
-// timeline.push(preload)
+timeline.push({
+  type: jsPsychFullscreen,
+  fullscreen_mode: true
+});
 timeline.push(introduction);
 timeline.push(introductionVideo1)
 timeline.push(experiments);
