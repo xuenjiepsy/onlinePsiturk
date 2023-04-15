@@ -9,9 +9,9 @@ const trajData = JSON.parse(xmlhttp.responseText);
 
 let xmlhttpCondition = new XMLHttpRequest();
 trajConditionSelect = 'condition' + trajSelectNum + '.json'
-xmlhttpxmlCondition.open('GET', trajConditionSelect, false);  // 第三个参数指定同步加载
-xmlhttpxmlCondition.send();
-const trajCondition = JSON.parse(xmlhttpxmlCondition.responseText);
+xmlhttpCondition.open('GET', trajConditionSelect, false);  // 第三个参数指定同步加载
+xmlhttpCondition.send();
+const trajCondition = JSON.parse(xmlhttpCondition.responseText);
 
 const EXPSETTINGS = {
 cellSize: 40,
