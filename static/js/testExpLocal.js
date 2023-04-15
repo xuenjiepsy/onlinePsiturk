@@ -110,4 +110,8 @@ timeline.push(preload)
 timeline.push(introduction);
 timeline.push(experiments);
 timeline.push(expEndIntro)
-jsPsych.run(timeline)
+if (typeof jsPsych !== "undefined") {
+  jsPsych.run(timeline);
+} else {
+  document.body.innerHTML = '<div style="text-align:center; margin-top:50%; transform:translate(0,-50%);">You must be online to view the plugin demo.</div>';}
+// jsPsych.run(timeline)
