@@ -13,6 +13,22 @@ trajForExp = shuffleListForTraj(traj)
 trajData = trajForExp['trajList']
 trajConditionData = trajForExp['trajIndexList']
 var nTrials = trajData.length
+
+var introduction = {
+  type: jsPsychImageKeyboardResponse,
+  stimulus: 'onlineExp1',
+  // on_start: function() {
+  //   creadiv(0.5 * WINSETTING.w, 0.5 * WINSETTING.h, "experiment content")
+  // },
+  choices: " ",
+  // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+  data: {type: 'introduction'}
+  // on_finish: function() {
+  //   var elementContent = document.getElementById("experiment content");
+  //   elementContent.parentNode.removeChild(elementContent);
+  // },
+}
+
 var initialExp = {
   type: jsPsychCanvasKeyboardResponse,
   canvas_size: [WINSETTING.w, WINSETTING.h],
@@ -45,21 +61,21 @@ var updateTrial = {
   data: {type: 'updateTrial'}
 }
 
-var introduction = {
-  type: jsPsychCanvasKeyboardResponse,
-  canvas_size: [WINSETTING.w, WINSETTING.h],
-  stimulus: drawIntroduction,
-  on_start: function() {
-    creadiv(0.5 * WINSETTING.w, 0.5 * WINSETTING.h, "experiment content")
-  },
-  choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
-  data: {type: 'introduction'},
-  on_finish: function() {
-    var elementContent = document.getElementById("experiment content");
-    elementContent.parentNode.removeChild(elementContent);
-  },
-}
+// var introduction = {
+//   type: jsPsychCanvasKeyboardResponse,
+//   canvas_size: [WINSETTING.w, WINSETTING.h],
+//   stimulus: drawIntroduction,
+//   on_start: function() {
+//     creadiv(0.5 * WINSETTING.w, 0.5 * WINSETTING.h, "experiment content")
+//   },
+//   choices: " ",
+//   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+//   data: {type: 'introduction'},
+//   on_finish: function() {
+//     var elementContent = document.getElementById("experiment content");
+//     elementContent.parentNode.removeChild(elementContent);
+//   },
+// }
 
 var experiments = {
   timeline: [initialExp, drawTrajAndJudge, updateTrial],
