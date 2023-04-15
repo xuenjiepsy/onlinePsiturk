@@ -2,6 +2,7 @@ let xmlhttp = new XMLHttpRequest();
 trajSelectNum = 1
 // trajSelectNum = Math.floor(Math.random() * 20) + 1;
 trajSelect = 'traj' + trajSelectNum.toString + '.json'
+console.log(trajSelect)
 xmlhttp.open('GET', trajSelect, false);  // 第三个参数指定同步加载
 xmlhttp.send();
 const trajData = JSON.parse(xmlhttp.responseText);
