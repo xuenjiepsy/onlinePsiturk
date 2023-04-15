@@ -6,6 +6,12 @@ xmlhttp.open('GET', trajSelect, false);  // 第三个参数指定同步加载
 xmlhttp.send();
 const trajData = JSON.parse(xmlhttp.responseText);
 
+let xmlhttpCondition = new XMLHttpRequest();
+trajConditionSelect = 'condition' + trajSelectNum.toString + '.json'
+xmlhttpxmlCondition.open('GET', trajConditionSelect, false);  // 第三个参数指定同步加载
+xmlhttpxmlCondition.send();
+const trajCondition = JSON.parse(xmlhttpxmlCondition.responseText);
+
 const EXPSETTINGS = {
 cellSize: 40,
 matrixsize: 15,

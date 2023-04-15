@@ -120,7 +120,8 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
-                        agentIdSeleted: agentIdSeleted
+                        agentIdSeleted: agentIdSeleted,
+                        condition: trajCondition[trialIndex]
                       };
                         console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
