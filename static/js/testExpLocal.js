@@ -9,6 +9,9 @@ var nTrials = trajData.length
 var jsPsych = initJsPsych()
 var timeline = [];
 var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
+trajForExp = shuffleListForTraj(traj)
+trajData = trajForExp['trajList']
+trajConditionData = trajForExp['trajIndexList']
 var initialExp = {
   type: jsPsychCanvasKeyboardResponse,
   canvas_size: [WINSETTING.w, WINSETTING.h],

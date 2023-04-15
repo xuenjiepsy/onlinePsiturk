@@ -12,10 +12,6 @@
 // xmlhttpCondition.open('GET', 'condition.json', false);  // 第三个参数指定同步加载
 // xmlhttpCondition.send();
 // const trajCondition = JSON.parse(xmlhttpCondition.responseText);
-trajForExp = shuffleListForTraj(traj)
-trajData = trajForExp['trajList']
-trajConditionData = trajForExp['trajIndexList']
-
 const EXPSETTINGS = {
 cellSize: 40,
 matrixsize: 15,
