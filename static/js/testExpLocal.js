@@ -14,8 +14,6 @@ trajData = trajForExp['trajList']
 trajConditionIndex= trajForExp['trajIndexList']
 var nTrials = trajData.length
 
-
-
 var introduction = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `

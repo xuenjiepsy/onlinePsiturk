@@ -46,7 +46,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     var singleTrialData = {
       trial: trialIndex,
       agentIdSeleted: agentIdSeleted,
-      conditionData: condition[trajConditionIndex[trialIndex]]
+      hideId: condition[trajConditionIndex[trialIndex]]["hideId"]
     };
       console.log(singleTrialData)
       psiTurk.recordTrialData(singleTrialData)
@@ -128,7 +128,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       var singleTrialData = {
                         trial: trialIndex,
                         agentIdSeleted: agentIdSeleted,
-                        conditionData: condition[trajConditionIndex[trialIndex]]
+                        hideId: condition[trajConditionIndex[trialIndex]]["hideId"]
                       };
                         console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
