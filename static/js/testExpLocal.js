@@ -11,7 +11,7 @@ var timeline = [];
 var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
 trajForExp = shuffleListForTraj(traj)
 trajData = trajForExp['trajList']
-trajConditionData = trajForExp['trajIndexList']
+trajConditionIndex= trajForExp['trajIndexList']
 var nTrials = trajData.length
 
 

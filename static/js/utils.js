@@ -128,7 +128,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       var singleTrialData = {
                         trial: trialIndex,
                         agentIdSeleted: agentIdSeleted,
-                        condition: trajConditionData[trialIndex]
+                        conditionData: condition[trajConditionIndex[trialIndex]]
                       };
                         console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
