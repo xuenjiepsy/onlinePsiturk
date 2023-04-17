@@ -46,7 +46,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     var singleTrialData = {
       trial: trialIndex,
       agentIdSeleted: agentIdSeleted,
-      condition: trajConditionData[trialIndex]
+      conditionData: condition[trajConditionIndex[trialIndex]]
     };
       console.log(singleTrialData)
       psiTurk.recordTrialData(singleTrialData)
