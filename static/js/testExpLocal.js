@@ -1,10 +1,15 @@
 var trialIndex = 0
+var trajFrame = 0
 var wolfId = 0
 var sheepId = 1
 var masterId = 2
 var distractorId = 3
 var agentNum = 4
 var restNum = 20
+var clickListX = []
+var clickListY = []
+var [mouseX, mouseY] = [0, 0]
+var agentIdSeleted = []
 // var ifPressJKey = false
 // var ifClick = false
 // let [mouseX, mouseY] = [0, 0]
