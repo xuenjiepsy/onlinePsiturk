@@ -63,6 +63,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
+  console.log('click'+trialIndex.toString())
   if(pressJ==0){
       document.addEventListener('click'+trialIndex.toString(), (e) => {
     var elementSelectWolfText = document.getElementById('please select wolf');
