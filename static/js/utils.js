@@ -84,7 +84,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   //   }
   // })
   // }
-  document.addEventListener('click',handleMouseClick)
+  document.addEventListener('click',handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted))
   // console.log('x:',mouseX)
   // console.log('y:',mouseY)
   // console.log(ifClick)
