@@ -62,18 +62,18 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  document.addEventListener('click', handleMouseClick(e));
-  // document.addEventListener('click', (e) => {
-  //   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-  //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  //   else{
-  //     clickListX.push(mouseX)
-  //     clickListY.push(mouseY)
-  //     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-  //   }
+  // document.addEventListener('click', handleMouseClick(e));
+  document.addEventListener('click', (e) => {
+    [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+    if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+    else{
+      clickListX.push(mouseX)
+      clickListY.push(mouseY)
+      agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+    }
     
     
-  // })
+  })
  
   clearInterval(interval);
   return 'j';}
@@ -129,7 +129,17 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
-                      document.removeEventListener('click', handleMouseClick);  
+                      document.removeEventListener('click', (e) => {
+                        [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+                        if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+                        else{
+                          clickListX.push(mouseX)
+                          clickListY.push(mouseY)
+                          agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+                        }
+                        
+                        
+                      }) 
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
@@ -187,12 +197,12 @@ function isEnoughForRest(trialIndex, restNum) {
   }
 }
 
-function handleMouseClick(e) {
-  [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  else{
-    clickListX.push(mouseX)
-    clickListY.push(mouseY)
-    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-  }
-}
+// function handleMouseClick(e) {
+//   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+//   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+//   else{
+//     clickListX.push(mouseX)
+//     clickListY.push(mouseY)
+//     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+//   }
+// }
