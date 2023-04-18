@@ -41,9 +41,8 @@ function posConvert(x,y){
   return [x, y]
 }
 
-function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ){
+function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ, ifPressJKey){
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0&&pressJ==0){
-    ifPressJKey = true
     var singleTrialData = {
       trial: trialIndex,
       ifChase: 0,
@@ -59,6 +58,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     return 'f'
   }
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
+    ifPressJKey = true
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
