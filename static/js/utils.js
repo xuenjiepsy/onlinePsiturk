@@ -63,6 +63,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   }
   var agentIdSeleted = []
   document.addEventListener('click', handleMouseClick);
+  console.log(ifClick)
   if(ifClick){
     if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
     else{
