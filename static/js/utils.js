@@ -63,6 +63,8 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   document.addEventListener('click', handleMouseClick);
+  console.log('x:',mouseX)
+  console.log('y:',mouseY)
   // console.log(ifClick)
   // if(ifClick){
   // console.log
@@ -205,11 +207,13 @@ function isEnoughForRest(trialIndex, restNum) {
 
 
 function handleMouseClick(e) {
-	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  else{
-    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex, clickListX, clickListY)
-  }
-  console.log(mouseX,mouseY)
+	[mouseX1, mouseY1] = posConvert(e.clientX, e.clientY)
+  mouseX = mouseX1
+  mouseY = mouseY1
+  // if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  // else{
+  //   agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex, clickListX, clickListY)
+  // }
+  // console.log(mouseX,mouseY)
   // jsPsych.data.addProperties({pos:[mouseX, mouseY]});
 }
