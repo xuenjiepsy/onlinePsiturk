@@ -86,7 +86,7 @@ var updateTrial = {
   func: function(){
     trialIndex += 1
     if(isEnoughForRest(trialIndex, restNum)==false){
-       jsPsych.endCurrentTimeline()
+      jsPsych.finishTrial()
     }
   },
   data: {type: 'updateTrial'}
