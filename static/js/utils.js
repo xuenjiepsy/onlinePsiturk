@@ -170,7 +170,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                         masterRealForce: conditionData[trajConditionIndex[trialIndex]]['condition']['masterRealForce'],
                         hideId: conditionData[trajConditionIndex[trialIndex]]['condition']['hideId'],
                       };
-                        // console.log(singleTrialData)
+                        console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
                       jsPsych.finishTrial()
                     }
