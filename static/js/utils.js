@@ -62,9 +62,25 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
-  document.addEventListener('click', handleMouseClick);
-  console.log('x:',mouseX)
-  console.log('y:',mouseY)
+  if(pressJ==0){
+      document.addEventListener('click', (e) => {
+    var elementSelectWolfText = document.getElementById('please select wolf');
+    var elementSelectSheepText = document.getElementById('please select sheep');
+    if(elementSelectWolfText!=null||elementSelectSheepText!=null){
+      [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+      console.log(mouseX,mouseY)
+      if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+      else{
+        clickListX.push(mouseX)
+        clickListY.push(mouseY)
+        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+      }
+    }
+  })
+  }
+ 
+  // console.log('x:',mouseX)
+  // console.log('y:',mouseY)
   // console.log(ifClick)
   // if(ifClick){
   // console.log
@@ -92,9 +108,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   return 'j';}
 }
 
-function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex, clickListX, clickListY) {
-  clickListX.push(mouseX)
-  clickListY.push(mouseY)
+function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
   // console.log('before:',agentIdSeleted)
   for(let i=0; i<agentNum; i++) {
         agentX = traj[i][0] * EXPSETTINGS.posConvFactor - EXPSETTINGS.posConvDis
