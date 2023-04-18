@@ -45,7 +45,7 @@ let interval = setInterval(function() {
 
   jsPsych.pluginAPI.getKeyboardResponse({
     callback_function: function(info){
-      ifPress = judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ, ifPressJKey)
+      ifPress = judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ)
       if(ifPress=='f'){
         pressNum += 1
       }

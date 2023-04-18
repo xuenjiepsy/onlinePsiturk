@@ -41,7 +41,7 @@ function posConvert(x,y){
   return [x, y]
 }
 
-function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ, ifPressJKey){
+function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ){
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0&&pressJ==0){
     var singleTrialData = {
       trial: trialIndex,
