@@ -8,7 +8,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 # db_url = "sqlite:///participants.db"
 
-db_url = "postgres://yedquxjthgznhe:f3e80b2076af073665b5e92060d10e7a44a92950e0bd320cbbbfafd19aebec87@ec2-18-215-96-22.compute-1.amazonaws.com:5432/d4h9241gbq04v1"
+db_url = "postgres://hpymyqpmmsuiul:771995b095042ce6c3485dc9d9bf273551e386710f635fa1c48632c7d147c82d@ec2-52-205-45-222.compute-1.amazonaws.com:5432/dfs2pmoe0bahjv"
 
 table_name = 'exp1_driftToMiddle_timeDelay5s_freezeWindow'
 
@@ -27,8 +27,8 @@ rows = s.execute()
 data = []
 #status codes of subjects who completed experiment
 statuses = [3,4,5,7]
-modes = 'live' # live/debug
-# modes = 'debug' # live/debug
+# modes = 'live' # live/debug
+modes = 'debug' # live/debug
 
 # if you have workers you wish to exclude, add them here
 exclude = []
