@@ -35,7 +35,7 @@ var introductionVideo1 = {
       <video src="static/demos/1.1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
     `,
   choices: " ",
-  // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to continue.</p>',
   data: {type: 'introduction'}
   // on_finish: function() {
   //   var elementContent = document.getElementById("experiment content");

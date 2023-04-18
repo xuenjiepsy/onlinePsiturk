@@ -45,8 +45,12 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0&&pressJ==0){
     var singleTrialData = {
       trial: trialIndex,
-      agentIdSeleted: agentIdSeleted,
-      condition: conditionData[trajConditionIndex[trialIndex]]
+      ifChase: 0,
+      selectWolf: null,
+      selectSheep: null,
+      angleOfDivergence: conditionData[trajConditionIndex[trialIndex]]['condition']['angleOfDivergence'], 
+      masterRealForce: conditionData[trajConditionIndex[trialIndex]]['condition']['masterRealForce'],
+      hideId: conditionData[trajConditionIndex[trialIndex]]['condition']['hideId'],
     };
       console.log(singleTrialData)
       psiTurk.recordTrialData(singleTrialData)
@@ -127,8 +131,12 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
-                        agentIdSeleted: agentIdSeleted,
-                        condition: conditionData[trajConditionIndex[trialIndex]]
+                        ifChase: 1,
+                        selectWolf: agentIdSeleted[0],
+                        selectSheep: agentIdSeleted[1],
+                        angleOfDivergence: conditionData[trajConditionIndex[trialIndex]]['condition']['angleOfDivergence'], 
+                        masterRealForce: conditionData[trajConditionIndex[trialIndex]]['condition']['masterRealForce'],
+                        hideId: conditionData[trajConditionIndex[trialIndex]]['condition']['hideId'],
                       };
                         console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
