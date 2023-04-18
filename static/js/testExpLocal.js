@@ -7,7 +7,7 @@ var agentNum = 4
 var restNum = 20
 // var ifPressJKey = false
 // var ifClick = false
-let [mouseX, mouseY] = [0, 0]
+// let [mouseX, mouseY] = [0, 0]
 
 var jsPsych = initJsPsych()
 var timeline = [];
