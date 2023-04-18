@@ -231,6 +231,7 @@ function isEnoughForRest(trialIndex, restNum) {
 
 function handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted) {
 	[mouseX, mouseY] = posConvert(event.clientX, event.clientY)
+  console.log([mouseX, mouseY])
   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
   else{
     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
