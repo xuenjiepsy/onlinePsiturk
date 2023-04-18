@@ -129,17 +129,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
-                      document.removeEventListener('click', (e) => {
-                        [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-                        if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-                        else{
-                          clickListX.push(mouseX)
-                          clickListY.push(mouseY)
-                          agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-                        }
-                        
-                        
-                      }) 
+                      document.removeEventListener('click', handleMouseClick);
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
@@ -197,8 +187,8 @@ function isEnoughForRest(trialIndex, restNum) {
   }
 }
 
-function handleMouseClick(e) {
-  [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+const handleMouseClick = (e) => {
+	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
   else{
     clickListX.push(mouseX)
@@ -206,3 +196,13 @@ function handleMouseClick(e) {
     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
   }
 }
+
+// function handleMouseClick(e) {
+//   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+//   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+//   else{
+//     clickListX.push(mouseX)
+//     clickListY.push(mouseY)
+//     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+//   }
+// }
