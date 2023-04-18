@@ -10,7 +10,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 db_url = "postgres://hpymyqpmmsuiul:771995b095042ce6c3485dc9d9bf273551e386710f635fa1c48632c7d147c82d@ec2-52-205-45-222.compute-1.amazonaws.com:5432/dfs2pmoe0bahjv"
 
-table_name = 'exp1_driftToMiddle_timeDelay5s_freezeWindow'
+table_name = 'onlineExpTest1'
 
 
 data_column_name = 'datastring'

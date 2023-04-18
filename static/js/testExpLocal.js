@@ -13,8 +13,8 @@ var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
 trajForExp = shuffleListForTraj(traj)
 trajData = trajForExp['trajList']
 trajConditionIndex= trajForExp['trajIndexList']
-var nTrials = trajData.length
-
+// var nTrials = trajData.length
+var nTrials = 2
 var introduction = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
