@@ -65,25 +65,26 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   }
   // clickName = 'click'+trialIndex.toString()
   // console.log('click'+trialIndex.toString())
-  if(pressJ==0){
-      document.addEventListener('click', (e) => {
-    var elementSelectWolfText = document.getElementById('please select wolf');
-    var elementSelectSheepText = document.getElementById('please select sheep');
-    // console.log(elementSelectWolfText)
-    if(elementSelectWolfText!=null||elementSelectSheepText!=null){
-      [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-      // console.log(mouseX,mouseY)
-      if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-      else{
-        console.log(agentIdSeleted)
-        clickListX.push(mouseX)
-        clickListY.push(mouseY)
-        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-      }
-    }
-  })
-  }
- 
+  // if(pressJ==0&&trialIndex==0){
+  //     document.addEventListener('click', (e) => {
+  
+  //   var elementSelectWolfText = document.getElementById('please select wolf');
+  //   var elementSelectSheepText = document.getElementById('please select sheep');
+  //   // console.log(elementSelectWolfText)
+  //   if(elementSelectWolfText!=null||elementSelectSheepText!=null){
+  //     [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  //     // console.log(mouseX,mouseY)
+  //     if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  //     else{
+  //       console.log(agentIdSeleted)
+  //       clickListX.push(mouseX)
+  //       clickListY.push(mouseY)
+  //       agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+  //     }
+  //   }
+  // })
+  // }
+  document.addEventListener('click',handleMouseClick)
   // console.log('x:',mouseX)
   // console.log('y:',mouseY)
   // console.log(ifClick)
@@ -228,14 +229,11 @@ function isEnoughForRest(trialIndex, restNum) {
 // }
 
 
-function handleMouseClick(e) {
-	[mouseX1, mouseY1] = posConvert(e.clientX, e.clientY)
-  mouseX = mouseX1
-  mouseY = mouseY1
-  // if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  // else{
-  //   agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex, clickListX, clickListY)
-  // }
-  // console.log(mouseX,mouseY)
-  // jsPsych.data.addProperties({pos:[mouseX, mouseY]});
+function handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted) {
+	[mouseX, mouseY] = posConvert(event.clientX, event.clientY)
+  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  else{
+    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+  }
 }
+

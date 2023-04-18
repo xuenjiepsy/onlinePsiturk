@@ -6,6 +6,7 @@ var masterId = 2
 var distractorId = 3
 var agentNum = 4
 var restNum = 20
+var clickList = []
 // var clickListX = []
 // var clickListY = []
 // var mouseX = 0
