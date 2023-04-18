@@ -85,19 +85,21 @@ var updateTrial = {
   type: jsPsychCallFunction,
   func: function(){
     trialIndex += 1
-    finishRestTrial = false
+    if(isEnoughForRest(trialIndex, restNum)==false){
+       jsPsych.endCurrentTimeline()
+    }
   },
   data: {type: 'updateTrial'}
 }
 
 var rest = {
   type: jsPsychHtmlKeyboardResponse,
-  on_start: function() {
-    if(isEnoughForRest(trialIndex, restNum)==false&&finishRestTrial==false){
-      jsPsych.finishTrial()
-      finishRestTrial = true
-    }
-  },
+  // on_start: function() {
+  //   if(isEnoughForRest(trialIndex, restNum)==false&&finishRestTrial==false){
+  //     jsPsych.finishTrial()
+  //     finishRestTrial = true
+  //   }
+  // },
   stimulus: `
       <img src="static/images/rest.png" style = "width: 1000px; height: 400px"/>
     `,
