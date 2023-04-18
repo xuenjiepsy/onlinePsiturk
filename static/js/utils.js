@@ -63,7 +63,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  document.addEventListener('click', handleMouseClick);
+  document.addEventListener('click', handleMouseClick(event, agentIdSeleted));
   // console.log(ifClick)
   // if(ifClick){
   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
@@ -204,7 +204,8 @@ function isEnoughForRest(trialIndex, restNum) {
 // }
 
 
-function handleMouseClick(e) {
+function handleMouseClick(e, agentIdSeleted) {
+  console.log(agentIdSeleted)
 	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
   console.log(mouseX,mouseY)
 }
