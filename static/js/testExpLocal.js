@@ -5,9 +5,10 @@ var masterId = 2
 var distractorId = 3
 var agentNum = 4
 var restNum = 20
-var ifClick = false
-var mouseX = 0
-var mouseY = 0
+var ifPressJKey = false
+// var ifClick = false
+// var mouseX = 0
+// var mouseY = 0
 
 var jsPsych = initJsPsych()
 var timeline = [];

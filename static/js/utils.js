@@ -43,6 +43,7 @@ function posConvert(x,y){
 
 function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ){
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0&&pressJ==0){
+    ifPressJKey = true
     var singleTrialData = {
       trial: trialIndex,
       ifChase: 0,
@@ -62,29 +63,29 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  document.addEventListener('click', handleMouseClick);
-  console.log(ifClick)
-  if(ifClick){
-    if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-    else{
-      clickListX.push(mouseX)
-      clickListY.push(mouseY)
-      agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-    }
-    ifClick = false
-  }
-
-  // document.addEventListener('click', (e) => {
-  //   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  // document.addEventListener('click', handleMouseClick);
+  // console.log(ifClick)
+  // if(ifClick){
   //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
   //   else{
   //     clickListX.push(mouseX)
   //     clickListY.push(mouseY)
   //     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
   //   }
-    
-    
-  // })
+  //   ifClick = false
+  // }
+
+  document.addEventListener('click', (e) => {
+    if(ifPressJKey==true){
+      [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+      if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+      else{
+        clickListX.push(mouseX)
+        clickListY.push(mouseY)
+        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+      }
+    }
+  })
  
   clearInterval(interval);
   return 'j';}
@@ -140,7 +141,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
-                      document.removeEventListener('click', handleMouseClick);
+                      ifPressJKey = false
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
