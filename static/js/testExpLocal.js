@@ -93,11 +93,11 @@ var rest = {
   type: jsPsychHtmlKeyboardResponse,
   on_start: function() {
     if(isEnoughForRest(trialIndex, restNum)==false){
-      jsPsych.finishTrial()
+      jsPsych.pluginAPI.keyDown(' ');
     }
   },
   stimulus: `
-      <img src="static/images/rest.png" style = "width: 700px; height: 400px"/>
+      <img src="static/images/rest.png" style = "width: 1000px; height: 400px"/>
     `,
   choices: " ",
   // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
