@@ -158,7 +158,9 @@ var rest = {
 //     elementContent.parentNode.removeChild(elementContent);
 //   },
 // }
-var intro = [introduction1,introductionVideo1,introductionVideo2,introductionVideo3,introductionVideo4,introduction2]
+var intro = {
+  timeline: [introduction1,introductionVideo1,introductionVideo2,introductionVideo3,introductionVideo4,introduction2]
+}
 
 var experiments = {
   timeline: [initialExp, drawTrajAndJudge, updateTrial, rest],
