@@ -63,10 +63,10 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
-  clickName = 'click'+trialIndex.toString()
+  // clickName = 'click'+trialIndex.toString()
   // console.log('click'+trialIndex.toString())
   if(pressJ==0){
-      document.addEventListener(clickName, (e) => {
+      document.addEventListener('click', (e) => {
     var elementSelectWolfText = document.getElementById('please select wolf');
     var elementSelectSheepText = document.getElementById('please select sheep');
     // console.log(elementSelectWolfText)
@@ -75,7 +75,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
       // console.log(mouseX,mouseY)
       if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
       else{
-        // console.log(agentIdSeleted)
+        console.log(agentIdSeleted)
         clickListX.push(mouseX)
         clickListY.push(mouseY)
         agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
@@ -163,9 +163,9 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
-                      clickName = 'click'+trialIndex.toString()
-                      myFunction = null;
-                      document.addEventListener(clickName, myFunction);
+                      // clickName = 'click'+trialIndex.toString()
+                      // myFunction = null;
+                      // document.addEventListener(clickName, myFunction);
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
