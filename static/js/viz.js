@@ -41,7 +41,7 @@ let pressNum = 0
 let ifText = true
 let pressJ = 0
 
-let interval = setInterval(function() {
+let interval = setInfterval(function() {
 
   jsPsych.pluginAPI.getKeyboardResponse({
     callback_function: function(info){

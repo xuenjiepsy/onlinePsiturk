@@ -52,7 +52,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
       masterRealForce: conditionData[trajConditionIndex[trialIndex]]['condition']['masterRealForce'],
       hideId: conditionData[trajConditionIndex[trialIndex]]['condition']['hideId'],
     };
-      console.log(singleTrialData)
+      // console.log(singleTrialData)
       psiTurk.recordTrialData(singleTrialData)
     jsPsych.finishTrial() 
     return 'f'
@@ -62,17 +62,18 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  document.addEventListener('click', (e) => {
-    [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-    if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-    else{
-      clickListX.push(mouseX)
-      clickListY.push(mouseY)
-      agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-    }
+  document.addEventListener('click', handleMouseClick(e,trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex));
+  // document.addEventListener('click', (e) => {
+  //   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  //   else{
+  //     clickListX.push(mouseX)
+  //     clickListY.push(mouseY)
+  //     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+  //   }
     
     
-  })
+  // })
  
   clearInterval(interval);
   return 'j';}
@@ -127,7 +128,8 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       var elementSelectSheepText = document.getElementById('please select sheep');
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
-                      }  
+                      }
+                      document.removeEventListener('click', handleMouseClick);  
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
@@ -138,7 +140,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                         masterRealForce: conditionData[trajConditionIndex[trialIndex]]['condition']['masterRealForce'],
                         hideId: conditionData[trajConditionIndex[trialIndex]]['condition']['hideId'],
                       };
-                        console.log(singleTrialData)
+                        // console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
                       jsPsych.finishTrial()
                     }
@@ -182,5 +184,15 @@ function isEnoughForRest(trialIndex, restNum) {
     return true;
   } else {
     return false;
+  }
+}
+
+function handleMouseClick(e) {
+  [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  else{
+    clickListX.push(mouseX)
+    clickListY.push(mouseY)
+    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
   }
 }
