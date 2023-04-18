@@ -4,6 +4,7 @@ var sheepId = 1
 var masterId = 2
 var distractorId = 3
 var agentNum = 4
+var restNum = 2
 
 
 var jsPsych = initJsPsych()
@@ -88,6 +89,21 @@ var updateTrial = {
   data: {type: 'updateTrial'}
 }
 
+var rest = {
+  type: jsPsychHtmlKeyboardResponse,
+  on_start: function() {
+    if(isEnoughForRest(trialIndex, restNum)==false){
+      jsPsych.finishTrial()
+    }
+  },
+  stimulus: `
+      <img src="static/images/rest.png" style = "width: 700px; height: 400px"/>
+    `,
+  choices: " ",
+  // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+  data: {type: 'rest'}
+}
+
 // var introduction = {
 //   type: jsPsychCanvasKeyboardResponse,
 //   canvas_size: [WINSETTING.w, WINSETTING.h],
@@ -105,7 +121,7 @@ var updateTrial = {
 // }
 
 var experiments = {
-  timeline: [initialExp, drawTrajAndJudge, updateTrial],
+  timeline: [initialExp, drawTrajAndJudge, updateTrial, rest],
   repetitions: nTrials
 }
 

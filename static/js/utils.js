@@ -168,3 +168,11 @@ function shuffleListForTraj(list) {
   }
   return {'trajList': shuffledList, 'trajIndexList': indexList}; // 返回打乱后的列表和索引列表
 }
+
+function isEnoughForRest(trialIndex, restNum) {
+  if (trialIndex % restNum === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
