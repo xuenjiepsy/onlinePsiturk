@@ -85,6 +85,7 @@ var updateTrial = {
   type: jsPsychCallFunction,
   func: function(){
     trialIndex += 1
+    finishRestTrial = false
   },
   data: {type: 'updateTrial'}
 }
@@ -92,8 +93,9 @@ var updateTrial = {
 var rest = {
   type: jsPsychHtmlKeyboardResponse,
   on_start: function() {
-    if(isEnoughForRest(trialIndex, restNum)==false){
-      jsPsych.pluginAPI.keyDown(' ');
+    if(isEnoughForRest(trialIndex, restNum)==false&&finishRestTrial==false){
+      jsPsych.finishTrial()
+      finishRestTrial = true
     }
   },
   stimulus: `
