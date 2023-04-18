@@ -58,41 +58,41 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     return 'f'
   }
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
-    ifPressJKey = true
+    // ifPressJKey = true
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  // document.addEventListener('click', handleMouseClick);
+  document.addEventListener('click', handleMouseClick);
   // console.log(ifClick)
   // if(ifClick){
-  //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  //   else{
-  //     clickListX.push(mouseX)
-  //     clickListY.push(mouseY)
-  //     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-  //   }
+  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  else{
+    clickListX.push(mouseX)
+    clickListY.push(mouseY)
+    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+  }
   //   ifClick = false
   // }
 
-  document.addEventListener('click', (e) => {
-    if(ifPressJKey==true){
-      [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-      console.log(mouseX,mouseY)
-      if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-      else{
-        clickListX.push(mouseX)
-        clickListY.push(mouseY)
-        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex, ifPressJKey)
-      }
-    }
-  })
+  // document.addEventListener('click', (e) => {
+  //   if(ifPressJKey==true){
+  //     [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  //     console.log(mouseX,mouseY)
+  //     if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  //     else{
+  //       clickListX.push(mouseX)
+  //       clickListY.push(mouseY)
+  //       agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex, ifPressJKey)
+  //     }
+  //   }
+  // })
  
   clearInterval(interval);
   return 'j';}
 }
 
-function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex, ifPressJKey) {
+function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
   // console.log('before:',agentIdSeleted)
   for(let i=0; i<agentNum; i++) {
         agentX = traj[i][0] * EXPSETTINGS.posConvFactor - EXPSETTINGS.posConvDis
@@ -107,7 +107,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex, ifPres
                 // agentIdSeleted = unique(agentIdSeleted)
                 // agentIdSeleted = agentIdSeleted.filter(function(item) { return item !== -1; });
                 // console.log(agentIdSeleted.length)
-                if(agentIdSeleted.length==1&&ifPressJKey==true){
+                if(agentIdSeleted.length==1){
                   // console.log('wolf',agentIdSeleted)
                   // console.log(document.getElementById("wolf"))
                   if(document.getElementById("wolf")==null){
@@ -120,7 +120,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex, ifPres
                      break;
                   }
                 }
-                else if(agentIdSeleted.length==2&&ifPressJKey==true){
+                else if(agentIdSeleted.length==2){
                   // console.log('sheep',agentIdSeleted)
                   if(document.getElementById("sheep")==null){
                     creadiv(agentX, agentY, 'sheep')
@@ -201,7 +201,6 @@ function isEnoughForRest(trialIndex, restNum) {
 
 const handleMouseClick = (e) => {
 	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-  ifClick = true
 }
 
 // function handleMouseClick(e) {
