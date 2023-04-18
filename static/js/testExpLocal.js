@@ -49,7 +49,7 @@ var introductionVideo1 = {
       <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=3.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
     `,
   choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 1<br>Press the <strong>spacebar</strong> to continue.</p>',
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 1,Press the <strong>spacebar</strong> to continue.</p>',
 }
 
 var introductionVideo2 = {
@@ -58,7 +58,7 @@ var introductionVideo2 = {
       <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=3.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
     `,
   choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 2<br>Press the <strong>spacebar</strong> to continue.</p>',
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 2,Press the <strong>spacebar</strong> to continue.</p>',
 }
 
 var introductionVideo3 = {
@@ -67,7 +67,7 @@ var introductionVideo3 = {
       <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
     `,
   choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">No-Chasing example 2<br>Press the <strong>spacebar</strong> to continue.</p>',
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">No-Chasing example 2,Press the <strong>spacebar</strong> to continue.</p>',
 }
 
 var introductionVideo4 = {
@@ -76,7 +76,7 @@ var introductionVideo4 = {
       <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
     `,
   choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">N0-Chasing example 2<br>Press the <strong>spacebar</strong> to continue.</p>',
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">N0-Chasing example 2,Press the <strong>spacebar</strong> to continue.</p>',
 }
 // var introductionVideo2 = {
 //   type: jsPsychHtmlKeyboardResponse,
