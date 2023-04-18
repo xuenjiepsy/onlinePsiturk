@@ -58,11 +58,22 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     return 'f'
   }
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
+  let ifClick = false
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
   document.addEventListener('click', handleMouseClick);
+  if(ifClick){
+    if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+    else{
+      clickListX.push(mouseX)
+      clickListY.push(mouseY)
+      agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+    }
+    ifClick = false
+  }
+
   // document.addEventListener('click', (e) => {
   //   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
   //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
@@ -189,12 +200,7 @@ function isEnoughForRest(trialIndex, restNum) {
 
 const handleMouseClick = (e) => {
 	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  else{
-    clickListX.push(mouseX)
-    clickListY.push(mouseY)
-    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-  }
+  ifClick = true
 }
 
 // function handleMouseClick(e) {
