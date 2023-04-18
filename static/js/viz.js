@@ -69,7 +69,13 @@ let interval = setInterval(function() {
     drawCircle(context, colorSpace[3], 1 / 6 * EXPSETTINGS.lineWidth,
     trajData[trialIndex][trajFrame][distractorId][0], trajData[trialIndex][trajFrame][distractorId][1], 0, 2 * Math.PI)
     context.beginPath();
-    drawLine(context, [trajData[trialIndex][trajFrame][wolfId],trajData[trialIndex][trajFrame][masterId]], EXPSETTINGS.lineWidthConnectBalls)
+    if(conditionData[trajConditionIndex[trialIndex]]['condition']['hideId']==3){
+      drawLine(context, [trajData[trialIndex][trajFrame][wolfId],trajData[trialIndex][trajFrame][masterId]], EXPSETTINGS.lineWidthConnectBalls)
+    }
+    else{
+      drawLine(context, [trajData[trialIndex][trajFrame][wolfId],trajData[trialIndex][trajFrame][masterId-1]], EXPSETTINGS.lineWidthConnectBalls)
+    }
+
   if (trajFrame < trajData[trialIndex].length-1) {
       trajFrame++;
   }
