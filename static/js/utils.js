@@ -66,8 +66,8 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   document.addEventListener('click', handleMouseClick);
   // console.log(ifClick)
   // if(ifClick){
-  mouseX = jsPsych.data.get().select('pos').values[0];
-  mouseY = jsPsych.data.get().select('pos').values[1];
+  // mouseX = jsPsych.data.get().select('pos').values[0];
+  // mouseY = jsPsych.data.get().select('pos').values[1];
   console.log(mouseY)
   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
   else{
@@ -210,5 +210,5 @@ function isEnoughForRest(trialIndex, restNum) {
 function handleMouseClick(e) {
 	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
   console.log(mouseX,mouseY)
-  jsPsych.data.addProperties({pos:[mouseX, mouseY]});
+  // jsPsych.data.addProperties({pos:[mouseX, mouseY]});
 }

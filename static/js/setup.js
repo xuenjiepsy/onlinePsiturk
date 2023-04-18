@@ -39,4 +39,4 @@ const WINSETTING = {
   h: (EXPSETTINGS.cellSize) * EXPSETTINGS.matrixsize
   }
 
- 
+var [mouseX, mouseY] = [0, 0]
