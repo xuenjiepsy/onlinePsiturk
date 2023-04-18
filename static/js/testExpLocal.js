@@ -4,7 +4,7 @@ var sheepId = 1
 var masterId = 2
 var distractorId = 3
 var agentNum = 4
-var restNum = 2
+var restNum = 20
 
 
 var jsPsych = initJsPsych()
@@ -13,16 +13,30 @@ var psiTurk = new PsiTurk(uniqueId, adServerLoc, mode);
 trajForExp = shuffleListForTraj(traj)
 trajData = trajForExp['trajList']
 trajConditionIndex= trajForExp['trajIndexList']
-// var nTrials = trajData.length
-var nTrials = 2
-var introduction = {
+var nTrials = trajData.length
+// var nTrials = 2
+var introduction1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
       <img src="static/images/onlineExp1.png" style = "width: 1400px; height: 800px"/>
     `,
   choices: " ",
   // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
-  data: {type: 'introduction'}
+  data: {type: 'introduction1'}
+  // on_finish: function() {
+  //   var elementContent = document.getElementById("experiment content");
+  //   elementContent.parentNode.removeChild(elementContent);
+  // },
+}
+
+var introduction2 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+      <img src="static/images/onlineExp2.png" style = "width: 1400px; height: 800px"/>
+    `,
+  choices: " ",
+  // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
+  data: {type: 'introduction2'}
   // on_finish: function() {
   //   var elementContent = document.getElementById("experiment content");
   //   elementContent.parentNode.removeChild(elementContent);
@@ -32,17 +46,38 @@ var introduction = {
 var introductionVideo1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <video src="static/demos/1.1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=3.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
     `,
   choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to continue.</p>',
-  data: {type: 'introduction'}
-  // on_finish: function() {
-  //   var elementContent = document.getElementById("experiment content");
-  //   elementContent.parentNode.removeChild(elementContent);
-  // },
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 1<br>Press the <strong>spacebar</strong> to continue.</p>',
 }
 
+var introductionVideo2 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=3.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+    `,
+  choices: " ",
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 2<br>Press the <strong>spacebar</strong> to continue.</p>',
+}
+
+var introductionVideo3 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+    `,
+  choices: " ",
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">No-Chasing example 2<br>Press the <strong>spacebar</strong> to continue.</p>',
+}
+
+var introductionVideo4 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: `
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+    `,
+  choices: " ",
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">N0-Chasing example 2<br>Press the <strong>spacebar</strong> to continue.</p>',
+}
 // var introductionVideo2 = {
 //   type: jsPsychHtmlKeyboardResponse,
 //   stimulus: `
@@ -123,6 +158,7 @@ var rest = {
 //     elementContent.parentNode.removeChild(elementContent);
 //   },
 // }
+var intro = [introduction1,introductionVideo1,introductionVideo2,introductionVideo3,introductionVideo4,introduction2]
 
 var experiments = {
   timeline: [initialExp, drawTrajAndJudge, updateTrial, rest],
@@ -148,12 +184,15 @@ var expEndIntro = {
   //   elementContent.parentNode.removeChild(elementContent);
   // },
 }
+
 timeline.push({
   type: jsPsychFullscreen,
   fullscreen_mode: true
 });
-timeline.push(introduction);
-timeline.push(introductionVideo1)
+
+// timeline.push(introduction);
+// timeline.push(introductionVideo1);
+timeline.push(intro);
 timeline.push(experiments);
 timeline.push(expEndIntro)
 // if (typeof jsPsych !== "undefined") {
