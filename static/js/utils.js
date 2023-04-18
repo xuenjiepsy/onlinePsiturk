@@ -201,6 +201,7 @@ function isEnoughForRest(trialIndex, restNum) {
 
 const handleMouseClick = (e) => {
 	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  console.log(mouseX,mouseY)
 }
 
 // function handleMouseClick(e) {
