@@ -78,6 +78,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   document.addEventListener('click', (e) => {
     if(ifPressJKey==true){
       [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+      console.log(mouseX,mouseY)
       if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
       else{
         clickListX.push(mouseX)
