@@ -66,7 +66,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
       document.addEventListener('click', (e) => {
     var elementSelectWolfText = document.getElementById('please select wolf');
     var elementSelectSheepText = document.getElementById('please select sheep');
-    console(elementSelectWolfText)
+    console.log(elementSelectWolfText)
     if(elementSelectWolfText!=null||elementSelectSheepText!=null){
       [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
       console.log(mouseX,mouseY)
