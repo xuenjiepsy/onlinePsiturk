@@ -62,7 +62,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  document.addEventListener('click', handleMouseClick(e,trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex));
+  document.addEventListener('click', handleMouseClick(e));
   // document.addEventListener('click', (e) => {
   //   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
   //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
