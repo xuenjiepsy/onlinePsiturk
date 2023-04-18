@@ -199,17 +199,12 @@ function isEnoughForRest(trialIndex, restNum) {
   }
 }
 
-const handleMouseClick = (e) => {
+// const handleMouseClick = (e) => {
+
+// }
+
+
+function handleMouseClick(e) {
 	[mouseX, mouseY] = posConvert(e.clientX, e.clientY)
   console.log(mouseX,mouseY)
 }
-
-// function handleMouseClick(e) {
-//   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-//   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-//   else{
-//     clickListX.push(mouseX)
-//     clickListY.push(mouseY)
-//     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-//   }
-// }
