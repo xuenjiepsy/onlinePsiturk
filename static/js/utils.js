@@ -62,18 +62,18 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   var agentIdSeleted = []
-  // document.addEventListener('click', handleMouseClick(e));
-  document.addEventListener('click', (e) => {
-    [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-    if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-    else{
-      clickListX.push(mouseX)
-      clickListY.push(mouseY)
-      agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-    }
+  document.addEventListener('click', handleMouseClick(e));
+  // document.addEventListener('click', (e) => {
+  //   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  //   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  //   else{
+  //     clickListX.push(mouseX)
+  //     clickListY.push(mouseY)
+  //     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+  //   }
     
     
-  })
+  // })
  
   clearInterval(interval);
   return 'j';}
@@ -197,12 +197,12 @@ function isEnoughForRest(trialIndex, restNum) {
   }
 }
 
-// function handleMouseClick(e) {
-//   [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-//   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-//   else{
-//     clickListX.push(mouseX)
-//     clickListY.push(mouseY)
-//     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-//   }
-// }
+function handleMouseClick(e) {
+  [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+  else{
+    clickListX.push(mouseX)
+    clickListY.push(mouseY)
+    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+  }
+}
