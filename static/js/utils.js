@@ -58,7 +58,6 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     return 'f'
   }
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
-  let ifClick = false
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
