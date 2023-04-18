@@ -1,11 +1,11 @@
   [HIT Configuration]
-title = Play a simple game
-description = Play a simple game
+title = Play a select game
+description = Play a select game(about 30 min)
 keywords = Psychology, Decision Making, Game
 lifetime = 24
 us_only = false
 approve_requirement = 95
-number_hits_approved = 50
+number_hits_approved = 0
 require_master_workers = false
 ad_url_domain = arcane-inlet-44500.herokuapp.com
 
@@ -15,7 +15,7 @@ ad_url_domain = arcane-inlet-44500.herokuapp.com
 #database_url = sqlite:///participants2.db
 database_url = postgresql://hpymyqpmmsuiul:771995b095042ce6c3485dc9d9bf273551e386710f635fa1c48632c7d147c82d@ec2-52-205-45-222.compute-1.amazonaws.com:5432/dfs2pmoe0bahjv
 
-assignments_table_name = exp1_driftToMiddle_timeDelay5s_freezeWindow
+assignments_table_name = onlineExpTest1
 
 [Server Parameters]
 host = 0.0.0.0
