@@ -64,7 +64,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
   }
   if(pressJ==0){
-      document.addEventListener('click', (e) => {
+      document.addEventListener('click'+trialIndex.toString(), (e) => {
     var elementSelectWolfText = document.getElementById('please select wolf');
     var elementSelectSheepText = document.getElementById('please select sheep');
     // console.log(elementSelectWolfText)
@@ -161,6 +161,8 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
+                      myFunction = null;
+                      document.addEventListener('click'+trialIndex.toString(), myFunction);
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
