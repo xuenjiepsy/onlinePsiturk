@@ -123,6 +123,7 @@ var updateTrial = {
   type: jsPsychCallFunction,
   func: function(){
     trialIndex += 1
+    ifPressJKey = false
     if(isEnoughForRest(trialIndex, restNum)==false){
       jsPsych.finishTrial()
     }

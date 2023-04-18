@@ -106,7 +106,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                 // agentIdSeleted = unique(agentIdSeleted)
                 // agentIdSeleted = agentIdSeleted.filter(function(item) { return item !== -1; });
                 // console.log(agentIdSeleted.length)
-                if(agentIdSeleted.length==1){
+                if(agentIdSeleted.length==1&&ifPressJKey==true){
                   // console.log('wolf',agentIdSeleted)
                   // console.log(document.getElementById("wolf"))
                   if(document.getElementById("wolf")==null){
@@ -119,7 +119,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                      break;
                   }
                 }
-                else if(agentIdSeleted.length==2){
+                else if(agentIdSeleted.length==2&&ifPressJKey==true){
                   // console.log('sheep',agentIdSeleted)
                   if(document.getElementById("sheep")==null){
                     creadiv(agentX, agentY, 'sheep')
@@ -141,7 +141,6 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
-                      ifPressJKey = false
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
