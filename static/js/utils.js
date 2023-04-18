@@ -82,7 +82,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
       else{
         clickListX.push(mouseX)
         clickListY.push(mouseY)
-        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex, ifPressJKey)
       }
     }
   })
@@ -91,7 +91,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   return 'j';}
 }
 
-function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
+function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex, ifPressJKey) {
   // console.log('before:',agentIdSeleted)
   for(let i=0; i<agentNum; i++) {
         agentX = traj[i][0] * EXPSETTINGS.posConvFactor - EXPSETTINGS.posConvDis
