@@ -40,7 +40,7 @@ let delay = 25
 let pressNum = 0
 let ifText = true
 let pressJ = 0
-let ifPressJKey = false
+// let ifPressJKey = false
 let interval = setInterval(function() {
 
   jsPsych.pluginAPI.getKeyboardResponse({
