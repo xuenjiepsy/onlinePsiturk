@@ -7,11 +7,11 @@
 // xmlhttp.send();
 // const traj = JSON.parse(xmlhttp.responseText);
 
-let xmlhttpCondition = new XMLHttpRequest();
-// trajConditionSelect = 'condition' + trajSelectNum + '.json'
-xmlhttpCondition.open('GET', '../config/condition.json', false);  // 第三个参数指定同步加载
-xmlhttpCondition.send();
-const conditionData = JSON.parse(xmlhttpCondition.responseText);
+// let xmlhttpCondition = new XMLHttpRequest();
+// // trajConditionSelect = 'condition' + trajSelectNum + '.json'
+// xmlhttpCondition.open('GET', '../config/condition.json', false);  // 第三个参数指定同步加载
+// xmlhttpCondition.send();
+// const conditionData = JSON.parse(xmlhttpCondition.responseText);
 
 const EXPSETTINGS = {
 cellSize: 40,
