@@ -23,7 +23,7 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
     x += 6*offsetX
   }
   if(t=="Remember to press a key before clicking the mouse"){
-    x += 15*offsetX
+    x += 12*offsetX
   }
   dd.style.left=x+"px";
   dd.style.top=y+"px"
@@ -50,7 +50,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
 
     var singleTrialData = {
       trial: trialIndex,
-      ifChase: 0,
+      ifJudgeChase: 0,
       selectWolf: null,
       selectSheep: null,
       angleOfDivergence: conditionData[trajConditionIndex[trialIndex]]['condition']['angleOfDivergence'], 
@@ -184,7 +184,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                       // var agentIdSeletedTotal2 = jsPsych.data.get().last(1).values()[0].agentIdSeletedTotal;
                       var singleTrialData = {
                         trial: trialIndex,
-                        ifChase: 1,
+                        ifJudgeChase: 1,
                         selectWolf: agentIdSeleted[0],
                         selectSheep: agentIdSeleted[1],
                         angleOfDivergence: conditionData[trajConditionIndex[trialIndex]]['condition']['angleOfDivergence'], 
