@@ -121,6 +121,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
         agentX = traj[i][0] * EXPSETTINGS.posConvFactor - EXPSETTINGS.posConvDis
         agentY = traj[i][1] * EXPSETTINGS.posConvFactor - EXPSETTINGS.posConvDis
         let d = dist(mouseX, mouseY, agentX, agentY);
+          console.log(d)
           if(d <= radius) {
             // console.log((mouseX-agentX),(mouseY-agentY))
                 if(agentIdSeleted.includes(i)==false){
