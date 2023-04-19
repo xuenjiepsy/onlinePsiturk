@@ -74,15 +74,15 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     if(elementSelectWolfText!=null||elementSelectSheepText!=null){
       [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
       // console.log(mouseX,mouseY)
-      if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+      if ((clickListX.includes(mouseX)&&clickListY.includes(mouseY))||agentIdSeleted.length>=2){}
       else{
         console.log(agentIdSeleted)
         clickListX.push(mouseX)
         clickListY.push(mouseY)
         agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-        if(agentIdSeleted.length==2){
-          agentIdSeleted = []
-        }
+        // if(agentIdSeleted.length==2){
+        //   agentIdSeleted = []
+        // }
         
       }
     }
