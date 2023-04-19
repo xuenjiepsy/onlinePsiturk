@@ -65,7 +65,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   }
   // clickName = 'click'+trialIndex.toString()
   // console.log('click'+trialIndex.toString())
-  if(pressJ==0){
+  if(pressJ==0&&trialIndex==0){
       document.addEventListener('click', (e) => {
   
     var elementSelectWolfText = document.getElementById('please select wolf');
