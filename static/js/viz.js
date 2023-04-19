@@ -79,6 +79,9 @@ let interval = setInterval(function() {
   if (trajFrame < trajData[trialIndex].length-1) {
       trajFrame++;
   }
+  else{
+    creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'Remember to press a key before clicking the mouse') 
+  }
 }, delay);
 }
 

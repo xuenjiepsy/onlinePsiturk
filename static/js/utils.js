@@ -4,7 +4,7 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
   dd.id = t; // 添加一个 ID
   dd.style.position="absolute"
   dd.style.fontWeight = "bold";
-  if(t=='please select dog'||t=='please select cat'){
+  if(t=='please select dog'||t=='please select cat'||t=='Remember to press a key before clicking the mouse'){
     dd.style.fontWeight = "bold";
     dd.style.fontSize = "24px";
     dd.style.fontFamily = "SimSun";
@@ -59,6 +59,11 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
     return 'f'
   }
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
+
+  var rememberText = document.getElementById('Remember to press a key before clicking the mouse');
+  if(rememberText!=null){     
+    rememberText.parentNode.removeChild(rememberText);
+}   
     // ifPressJKey = true
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select dog') 
