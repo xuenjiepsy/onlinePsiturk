@@ -4,7 +4,7 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
   dd.id = t; // 添加一个 ID
   dd.style.position="absolute"
   dd.style.fontWeight = "bold";
-  if(t=='please select wolf'||t=='please select sheep'){
+  if(t=='please select dog'||t=='please select cat'){
     dd.style.fontWeight = "bold";
     dd.style.fontSize = "24px";
     dd.style.fontFamily = "SimSun";
@@ -13,7 +13,7 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
   
   x = x - 0.5*EXPSETTINGS.cellSize*EXPSETTINGS.matrixsize + 0.5*document.body.clientWidth + offsetX
   y = y - 0.5*EXPSETTINGS.cellSize*EXPSETTINGS.matrixsize - EXPSETTINGS.textPadding + 0.5*document.body.clientHeight + offsetY
-  if(t=="sheep"||t=="wolf"){
+  if(t=="cat"||t=="dog"){
     x += 0.4*offsetX
   }
   if(t=="experiment content"){
@@ -61,15 +61,15 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
     // ifPressJKey = true
   if(ifText){
-    creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select wolf') 
+    creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select dog') 
   }
   // clickName = 'click'+trialIndex.toString()
   // console.log('click'+trialIndex.toString())
   if(pressJ==0){
       document.addEventListener('click', (e) => {
   
-    var elementSelectWolfText = document.getElementById('please select wolf');
-    var elementSelectSheepText = document.getElementById('please select sheep');
+    var elementSelectWolfText = document.getElementById('please select dog');
+    var elementSelectSheepText = document.getElementById('please select cat');
     // console.log(elementSelectWolfText)
     if(elementSelectWolfText!=null||elementSelectSheepText!=null){
       [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
@@ -137,35 +137,35 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                 if(agentIdSeleted.length==1){
                   // console.log('wolf',agentIdSeleted)
                   // console.log(document.getElementById("wolf"))
-                  if(document.getElementById("wolf")==null){
+                  if(document.getElementById("dog")==null){
                     var elementSelectWolfText = document.getElementById('please select wolf');
                     if(elementSelectWolfText!=null){     
                         elementSelectWolfText.parentNode.removeChild(elementSelectWolfText);
                     }     
-                     creadiv(agentX, agentY, 'wolf')
+                     creadiv(agentX, agentY, 'dog')
                      creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select sheep') 
                      break;
                   }
                 }
                 else if(agentIdSeleted.length==2){
                   // console.log('sheep',agentIdSeleted)
-                  if(document.getElementById("sheep")==null){
-                    creadiv(agentX, agentY, 'sheep')
+                  if(document.getElementById("cat")==null){
+                    creadiv(agentX, agentY, 'cat')
                   }
                   
                   // sleep(100, agentX, agentY)
                   
                   jsPsych.pluginAPI.setTimeout(function() {
-                    var elementWolf = document.getElementById("wolf");
+                    var elementWolf = document.getElementById("dog");
                     // console.log(element)
                     if(elementWolf!=null){
                       elementWolf.parentNode.removeChild(elementWolf);
                     }        
-                    var elementSheep = document.getElementById("sheep");
+                    var elementSheep = document.getElementById("cat");
                     // console.log(document.getElementById("sheep"))
                     if(elementSheep!=null){
                       elementSheep.parentNode.removeChild(elementSheep);
-                      var elementSelectSheepText = document.getElementById('please select sheep');
+                      var elementSelectSheepText = document.getElementById('please select cat');
                       if(elementSelectSheepText!=null){     
                         elementSelectSheepText.parentNode.removeChild(elementSelectSheepText);
                       }
@@ -234,12 +234,12 @@ function isEnoughForRest(trialIndex, restNum) {
 // }
 
 
-function handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted) {
-	[mouseX, mouseY] = posConvert(event.clientX, event.clientY)
-  console.log([mouseX, mouseY])
-  if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  else{
-    agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-  }
-}
+// function handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted) {
+// 	[mouseX, mouseY] = posConvert(event.clientX, event.clientY)
+//   console.log([mouseX, mouseY])
+//   if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+//   else{
+//     agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+//   }
+// }
 

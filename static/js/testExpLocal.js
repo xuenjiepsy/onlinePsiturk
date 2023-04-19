@@ -198,14 +198,15 @@ var expEndIntro = {
   // },
 }
 
-timeline.push({
-  type: jsPsychFullscreen,
-  fullscreen_mode: true
-});
+
 
 // timeline.push(introduction);
 // timeline.push(introductionVideo1);
 timeline.push(intro);
+timeline.push({
+  type: jsPsychFullscreen,
+  fullscreen_mode: true
+});
 timeline.push(experiments);
 timeline.push(expEndIntro)
 // if (typeof jsPsych !== "undefined") {
