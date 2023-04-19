@@ -28,7 +28,7 @@ var nTrials = trajData.length
 var introduction1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <img src="static/images/onlineExp1.png" style = "width: 1050px; height: 600px"/>
+      <img src="static/images/onlineExp1.png" style = "width: 1000px; height: 600px"/>
     `,
   choices: " ",
   data: {type: 'introduction1'}
@@ -37,7 +37,7 @@ var introduction1 = {
 var introduction2 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <img src="static/images/onlineExp2.png" style = "width: 1050px; height: 600px"/>
+      <img src="static/images/onlineExp2.png" style = "width: 1000px; height: 600px"/>
     `,
   choices: " ",
   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start experiment.</p>',
@@ -51,7 +51,7 @@ var introduction2 = {
 var introductionVideo1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=3.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=3.mp4" controls width="600" height="600" atuoplay="atuoplay"/>
     `,
   choices: " ",
   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 1. Press the <strong>spacebar</strong> to continue(if you have watched the video).</p>',
@@ -60,7 +60,7 @@ var introductionVideo1 = {
 var introductionVideo2 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=3.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=3.mp4" controls width="600" height="600" atuoplay="atuoplay"/>
     `,
   choices: " ",
   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Chasing example 2. Press the <strong>spacebar</strong> to continue(if you have watched the video).</p>',
@@ -69,7 +69,7 @@ var introductionVideo2 = {
 var introductionVideo3 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=0.0,hideId=1.mp4" controls width="600" height="600" atuoplay="atuoplay"/>
     `,
   choices: " ",
   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">No-Chasing example 1. Press the <strong>spacebar</strong> to continue(if you have watched the video).</p>',
@@ -78,7 +78,7 @@ var introductionVideo3 = {
 var introductionVideo4 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=1.mp4" controls width="800" height="800" atuoplay="atuoplay"/>
+      <video src="static/demos/masterRealForce=7.5,angleOfDivergence=30.0,hideId=1.mp4" controls width="600" height="600"  atuoplay="atuoplay"/>
     `,
   choices: " ",
   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">No-Chasing example 2. Press the <strong>spacebar</strong> to continue(if you have watched the video).</p>',
