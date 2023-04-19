@@ -80,6 +80,9 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
         clickListX.push(mouseX)
         clickListY.push(mouseY)
         agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+        if(agentIdSeleted.length==2){
+          agentIdSeleted = []
+        }
         
       }
     }
