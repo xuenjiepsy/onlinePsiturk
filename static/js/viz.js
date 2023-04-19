@@ -40,6 +40,7 @@ let delay = 25
 let pressNum = 0
 let ifText = true
 let pressJ = 0
+let textRemember = true
 // let ifPressJKey = false
 let interval = setInterval(function() {
 
@@ -84,8 +85,9 @@ let interval = setInterval(function() {
   if (trajFrame < trajData[trialIndex].length-1) {
       trajFrame++;
   }
-  else{
-    creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'Remember to press a key before clicking the mouse') 
+  else if(textRemember){
+    creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'Remember to press a key before clicking the mouse')
+    textRemember = false
   }
 }, delay);
 }
