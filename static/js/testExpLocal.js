@@ -122,7 +122,7 @@ var drawTrajAndJudge = {
   stimulus: drawTraj,
   choices: "NO_KEYS",
   // choices: " ",
-  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px; bold;">if here is a chasing, press "j"; else press "f"</p>',
+  prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px; bold;">if here is a chasing, press "j"; else press "f"<br>Remember to press a key before clicking the mouse.</p>',
   data: {type: 'maintask'},
 };
 
