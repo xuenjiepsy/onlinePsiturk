@@ -45,6 +45,10 @@ let interval = setInterval(function() {
 
   jsPsych.pluginAPI.getKeyboardResponse({
     callback_function: function(info){
+      var rememberText = document.getElementById('Remember to press a key before clicking the mouse');
+      if(rememberText!=null){     
+        rememberText.parentNode.removeChild(rememberText);
+      }   
       ifPress = judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ)
       if(ifPress=='f'){
         pressNum += 1
@@ -53,6 +57,7 @@ let interval = setInterval(function() {
         ifText = false
         pressJ = 1
       }
+
     },
     valid_responses: ["f","j"],
     rt_method: 'performance',

@@ -23,7 +23,7 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
     x += 6*offsetX
   }
   if(t=="Remember to press a key before clicking the mouse"){
-    x += 10*offsetX
+    x += 15*offsetX
   }
   dd.style.left=x+"px";
   dd.style.top=y+"px"
@@ -47,10 +47,7 @@ function posConvert(x,y){
 function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ){
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0&&pressJ==0){
     // console.log(agentIdSeleted)
-    var rememberText = document.getElementById('Remember to press a key before clicking the mouse');
-    if(rememberText!=null){     
-      rememberText.parentNode.removeChild(rememberText);
-  }   
+
     var singleTrialData = {
       trial: trialIndex,
       ifChase: 0,
@@ -67,10 +64,10 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   }
   else if(jsPsych.pluginAPI.compareKeys(info.key,'j')&&pressNum==0){
 
-  var rememberText = document.getElementById('Remember to press a key before clicking the mouse');
-  if(rememberText!=null){     
-    rememberText.parentNode.removeChild(rememberText);
-}   
+//   var rememberText = document.getElementById('Remember to press a key before clicking the mouse');
+//   if(rememberText!=null){     
+//     rememberText.parentNode.removeChild(rememberText);
+// }   
     // ifPressJKey = true
   if(ifText){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select dog') 
