@@ -28,21 +28,16 @@ var nTrials = trajData.length
 var introduction1 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <img src="static/images/onlineExp1.png" style = "width: 1400px; height: 800px"/>
+      <img src="static/images/onlineExp1.png" style = "width: 1050px; height: 600px"/>
     `,
   choices: " ",
-  // prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start.</p>',
   data: {type: 'introduction1'}
-  // on_finish: function() {
-  //   var elementContent = document.getElementById("experiment content");
-  //   elementContent.parentNode.removeChild(elementContent);
-  // },
 }
 
 var introduction2 = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: `
-      <img src="static/images/onlineExp2.png" style = "width: 1400px; height: 800px"/>
+      <img src="static/images/onlineExp2.png" style = "width: 1050px; height: 600px"/>
     `,
   choices: " ",
   prompt: '<p style="font-size:20px;text-align: center;margin-top: -10px;bold;">Press the <strong>spacebar</strong> to start experiment.</p>',
