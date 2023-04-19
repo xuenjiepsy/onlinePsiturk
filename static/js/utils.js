@@ -65,26 +65,27 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
   }
   // clickName = 'click'+trialIndex.toString()
   // console.log('click'+trialIndex.toString())
-  // if(pressJ==0&&trialIndex==0){
-  //     document.addEventListener('click', (e) => {
+  if(pressJ==0){
+      document.addEventListener('click', (e) => {
   
-  //   var elementSelectWolfText = document.getElementById('please select wolf');
-  //   var elementSelectSheepText = document.getElementById('please select sheep');
-  //   // console.log(elementSelectWolfText)
-  //   if(elementSelectWolfText!=null||elementSelectSheepText!=null){
-  //     [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
-  //     // console.log(mouseX,mouseY)
-  //     if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
-  //     else{
-  //       console.log(agentIdSeleted)
-  //       clickListX.push(mouseX)
-  //       clickListY.push(mouseY)
-  //       agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
-  //     }
-  //   }
-  // })
-  // }
-  document.addEventListener('click',handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted))
+    var elementSelectWolfText = document.getElementById('please select wolf');
+    var elementSelectSheepText = document.getElementById('please select sheep');
+    // console.log(elementSelectWolfText)
+    if(elementSelectWolfText!=null||elementSelectSheepText!=null){
+      [mouseX, mouseY] = posConvert(e.clientX, e.clientY)
+      // console.log(mouseX,mouseY)
+      if (clickListX.includes(mouseX)&&clickListY.includes(mouseY)){}
+      else{
+        
+        clickListX.push(mouseX)
+        clickListY.push(mouseY)
+        agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
+        console.log(agentIdSeleted)
+      }
+    }
+  })
+  }
+  // document.addEventListener('click',handleMouseClick(clickListX, clickListY, trialIndex, trajFrame, agentIdSeleted))
   // console.log('x:',mouseX)
   // console.log('y:',mouseY)
   // console.log(ifClick)
