@@ -138,12 +138,12 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                   // console.log('wolf',agentIdSeleted)
                   // console.log(document.getElementById("wolf"))
                   if(document.getElementById("dog")==null){
-                    var elementSelectWolfText = document.getElementById('please select wolf');
+                    var elementSelectWolfText = document.getElementById('please select dog');
                     if(elementSelectWolfText!=null){     
                         elementSelectWolfText.parentNode.removeChild(elementSelectWolfText);
                     }     
                      creadiv(agentX, agentY, 'dog')
-                     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select sheep') 
+                     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'please select cat') 
                      break;
                   }
                 }
