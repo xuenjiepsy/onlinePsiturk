@@ -22,6 +22,9 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
   if(t=="thank you for participation"){
     x += 6*offsetX
   }
+  if(t=="Remember to press a key before clicking the mouse"){
+    x += 10*offsetX
+  }
   dd.style.left=x+"px";
   dd.style.top=y+"px"
   dd.innerText=t;
@@ -43,7 +46,11 @@ function posConvert(x,y){
 
 function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickListX, clickListY, pressNum, trialIndex, ifText, pressJ){
   if(jsPsych.pluginAPI.compareKeys(info.key,'f')&&pressNum==0&&pressJ==0){
-    console.log(agentIdSeleted)
+    // console.log(agentIdSeleted)
+    var rememberText = document.getElementById('Remember to press a key before clicking the mouse');
+    if(rememberText!=null){     
+      rememberText.parentNode.removeChild(rememberText);
+  }   
     var singleTrialData = {
       trial: trialIndex,
       ifChase: 0,
