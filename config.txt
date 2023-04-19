@@ -15,7 +15,7 @@ ad_url_domain = arcane-inlet-44500.herokuapp.com
 #database_url = sqlite:///participants2.db
 database_url = postgresql://hpymyqpmmsuiul:771995b095042ce6c3485dc9d9bf273551e386710f635fa1c48632c7d147c82d@ec2-52-205-45-222.compute-1.amazonaws.com:5432/dfs2pmoe0bahjv
 
-assignments_table_name = onlineExpTest2
+assignments_table_name = onlineExpTest3
 
 [Server Parameters]
 host = 0.0.0.0
@@ -31,7 +31,7 @@ num_counters = 1
 contact_email_on_error = 12239014@zju.edu.cn
 browser_exclude_rule = MSIE, mobile, tablet
 allow_repeats = false
-cutoff_time = 80
+cutoff_time = 50
 
 
 [Shell Parameters]

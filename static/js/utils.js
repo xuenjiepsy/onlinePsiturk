@@ -23,7 +23,7 @@ function creadiv(x,y,t){ //l是距左的距离,r是距右的距离,t是要显示
     x += 6*offsetX
   }
   if(t=="Remember to press a key before clicking the mouse"){
-    x += 12*offsetX
+    x += 13.5*offsetX
   }
   dd.style.left=x+"px";
   dd.style.top=y+"px"
@@ -85,7 +85,7 @@ function judgePressKeyAndClick(info, agentIdSeleted, interval, trajFrame, clickL
       // console.log(mouseX,mouseY)
       if ((clickListX.includes(mouseX)&&clickListY.includes(mouseY))||agentIdSeleted.length>=2){}
       else{
-        console.log(agentIdSeleted)
+        // console.log(agentIdSeleted)
         clickListX.push(mouseX)
         clickListY.push(mouseY)
         agentIdSeleted = checkSelection(mouseX, mouseY, trajData[trialIndex][trajFrame], agentIdSeleted, trialIndex)
@@ -139,7 +139,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                 if(agentIdSeleted.includes(i)==false){
                      agentIdSeleted.push(i)
                 }
-                console.log('inner:',agentIdSeleted)
+                // console.log('inner:',agentIdSeleted)
                 // agentIdSeleted = unique(agentIdSeleted)
                 // agentIdSeleted = agentIdSeleted.filter(function(item) { return item !== -1; });
                 // console.log(agentIdSeleted.length)
@@ -191,7 +191,7 @@ function checkSelection(mouseX, mouseY, traj, agentIdSeleted, trialIndex) {
                         masterRealForce: conditionData[trajConditionIndex[trialIndex]]['condition']['masterRealForce'],
                         hideId: conditionData[trajConditionIndex[trialIndex]]['condition']['hideId'],
                       };
-                        console.log(singleTrialData)
+                        // console.log(singleTrialData)
                         psiTurk.recordTrialData(singleTrialData)
                       jsPsych.finishTrial()
                     }

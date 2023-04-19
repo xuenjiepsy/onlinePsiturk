@@ -85,7 +85,7 @@ let interval = setInterval(function() {
   if (trajFrame < trajData[trialIndex].length-1) {
       trajFrame++;
   }
-  else if(textRemember){
+  else if(textRemember&&trajFrame==trajData[trialIndex].length-1){
     creadiv(EXPSETTINGS.selectTextPos[0], EXPSETTINGS.selectTextPos[1], 'Remember to press a key before clicking the mouse')
     textRemember = false
   }
